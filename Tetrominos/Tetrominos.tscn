@@ -1,0 +1,590 @@
+[gd_scene format=2]
+
+[node name="Tetrominos" type="Node2D"]
+
+[node name="Square" type="Sprite" parent="."]
+
+[node name="ColorRect1" type="ColorRect" parent="Square"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.929412, 0.34902, 0.34902, 1 )
+
+[node name="Outline" type="Line2D" parent="Square/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Square/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="Brick" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+
+[node name="ColorRect1" type="ColorRect" parent="Brick"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.054902, 0.858824, 0.823529, 1 )
+
+[node name="Outline" type="Line2D" parent="Brick/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Brick/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Brick"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 64.0
+color = Color( 0.054902, 0.858824, 0.823529, 1 )
+
+[node name="Outline" type="Line2D" parent="Brick/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Brick/ColorRect2"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="Line" type="Sprite" parent="."]
+position = Vector2( 0, 128 )
+
+[node name="ColorRect1" type="ColorRect" parent="Line"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.14902, 0.411765, 0.960784, 1 )
+
+[node name="Outline" type="Line2D" parent="Line/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Line/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Line"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 64.0
+color = Color( 0.14902, 0.411765, 0.960784, 1 )
+
+[node name="Outline" type="Line2D" parent="Line/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Line/ColorRect2"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Line"]
+margin_left = 128.0
+margin_right = 192.0
+margin_bottom = 64.0
+color = Color( 0.14902, 0.411765, 0.960784, 1 )
+
+[node name="Label" type="Label" parent="Line/ColorRect3"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="Outline" type="Line2D" parent="Line/ColorRect3"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="Line"]
+margin_left = 192.0
+margin_right = 256.0
+margin_bottom = 64.0
+color = Color( 0.14902, 0.411765, 0.960784, 1 )
+
+[node name="Outline" type="Line2D" parent="Line/ColorRect4"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Line/ColorRect4"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="Block" type="Sprite" parent="."]
+position = Vector2( 320, 0 )
+
+[node name="ColorRect1" type="ColorRect" parent="Block"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.917647, 0.47451, 0.878431, 1 )
+
+[node name="Outline" type="Line2D" parent="Block/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Block/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Block"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 64.0
+color = Color( 0.917647, 0.47451, 0.878431, 1 )
+
+[node name="Outline" type="Line2D" parent="Block/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Block/ColorRect2"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Block"]
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 128.0
+color = Color( 0.917647, 0.47451, 0.878431, 1 )
+
+[node name="Outline" type="Line2D" parent="Block/ColorRect3"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Block/ColorRect3"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect4" type="ColorRect" parent="Block"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 128.0
+margin_bottom = 128.0
+color = Color( 0.917647, 0.47451, 0.878431, 1 )
+
+[node name="Outline" type="Line2D" parent="Block/ColorRect4"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Block/ColorRect4"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="LJ" type="Sprite" parent="."]
+position = Vector2( 0, 256 )
+
+[node name="ColorRect1" type="ColorRect" parent="LJ"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.490196, 0.223529, 0.709804, 1 )
+
+[node name="Outline" type="Line2D" parent="LJ/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="LJ/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="LJ"]
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 128.0
+color = Color( 0.490196, 0.223529, 0.709804, 1 )
+
+[node name="Outline" type="Line2D" parent="LJ/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="LJ/ColorRect2"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="LJ"]
+margin_top = 128.0
+margin_right = 64.0
+margin_bottom = 192.0
+color = Color( 0.490196, 0.223529, 0.709804, 1 )
+
+[node name="Outline" type="Line2D" parent="LJ/ColorRect3"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="LJ/ColorRect3"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect4" type="ColorRect" parent="LJ"]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 192.0
+color = Color( 0.490196, 0.223529, 0.709804, 1 )
+
+[node name="Outline" type="Line2D" parent="LJ/ColorRect4"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="LJ/ColorRect4"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="SZ" type="Sprite" parent="."]
+position = Vector2( 192, 256 )
+rotation = 1.57079
+
+[node name="ColorRect1" type="ColorRect" parent="SZ"]
+margin_top = -64.0
+margin_right = 64.0
+color = Color( 0.870588, 0.917647, 0.0745098, 1 )
+
+[node name="Outline" type="Line2D" parent="SZ/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="SZ/ColorRect1"]
+margin_left = 0.000564575
+margin_top = 64.0
+margin_right = 64.0006
+margin_bottom = 128.0
+rect_rotation = 270.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="SZ"]
+margin_left = 64.0
+margin_top = -64.0
+margin_right = 128.0
+color = Color( 0.870588, 0.917647, 0.0745098, 1 )
+
+[node name="Outline" type="Line2D" parent="SZ/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="SZ/ColorRect2"]
+margin_left = 0.000564575
+margin_top = 64.0
+margin_right = 64.0006
+margin_bottom = 128.0
+rect_rotation = 270.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="SZ"]
+margin_left = 64.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = -64.0
+color = Color( 0.870588, 0.917647, 0.0745098, 1 )
+
+[node name="Outline" type="Line2D" parent="SZ/ColorRect3"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="SZ/ColorRect3"]
+margin_left = 0.000564575
+margin_top = 64.0
+margin_right = 64.0006
+margin_bottom = 128.0
+rect_rotation = 270.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect4" type="ColorRect" parent="SZ"]
+margin_left = 128.0
+margin_top = -128.0
+margin_right = 192.0
+margin_bottom = -64.0
+color = Color( 0.870588, 0.917647, 0.0745098, 1 )
+
+[node name="Outline" type="Line2D" parent="SZ/ColorRect4"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="SZ/ColorRect4"]
+margin_left = 0.000564575
+margin_top = 64.0
+margin_right = 64.0006
+margin_bottom = 128.0
+rect_rotation = 270.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="T" type="Sprite" parent="."]
+position = Vector2( 320, 192 )
+
+[node name="ColorRect1" type="ColorRect" parent="T"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.0901961, 0.698039, 0.243137, 1 )
+
+[node name="Outline" type="Line2D" parent="T/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="T/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="T"]
+margin_left = 64.0
+margin_right = 128.0
+margin_bottom = 64.0
+color = Color( 0.0901961, 0.698039, 0.243137, 1 )
+
+[node name="Outline" type="Line2D" parent="T/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="T/ColorRect2"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="T"]
+margin_left = 128.0
+margin_right = 192.0
+margin_bottom = 64.0
+color = Color( 0.0901961, 0.698039, 0.243137, 1 )
+
+[node name="Outline" type="Line2D" parent="T/ColorRect3"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="T/ColorRect3"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect4" type="ColorRect" parent="T"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 128.0
+margin_bottom = 128.0
+color = Color( 0.0901961, 0.698039, 0.243137, 1 )
+
+[node name="Outline" type="Line2D" parent="T/ColorRect4"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="T/ColorRect4"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="Plus" type="Sprite" parent="."]
+position = Vector2( 448, 384 )
+
+[node name="ColorRect1" type="ColorRect" parent="Plus"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.898039, 0.462745, 0.113725, 1 )
+
+[node name="Outline" type="Line2D" parent="Plus/ColorRect1"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Plus/ColorRect1"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Plus"]
+margin_left = -64.0
+margin_top = 64.0
+margin_bottom = 128.0
+color = Color( 0.898039, 0.462745, 0.113725, 1 )
+
+[node name="Outline" type="Line2D" parent="Plus/ColorRect2"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Plus/ColorRect2"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect3" type="ColorRect" parent="Plus"]
+margin_top = 64.0
+margin_right = 64.0
+margin_bottom = 128.0
+color = Color( 0.898039, 0.462745, 0.113725, 1 )
+
+[node name="Outline" type="Line2D" parent="Plus/ColorRect3"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Plus/ColorRect3"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect4" type="ColorRect" parent="Plus"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 128.0
+margin_bottom = 128.0
+color = Color( 0.898039, 0.462745, 0.113725, 1 )
+
+[node name="Outline" type="Line2D" parent="Plus/ColorRect4"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Plus/ColorRect4"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="ColorRect5" type="ColorRect" parent="Plus"]
+margin_top = 128.0
+margin_right = 64.0
+margin_bottom = 192.0
+color = Color( 0.898039, 0.462745, 0.113725, 1 )
+
+[node name="Outline" type="Line2D" parent="Plus/ColorRect5"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Plus/ColorRect5"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
+
+[node name="Filled In Square" type="Sprite" parent="."]
+position = Vector2( 64, 512 )
+
+[node name="ColorRect" type="ColorRect" parent="Filled In Square"]
+margin_right = 64.0
+margin_bottom = 64.0
+color = Color( 0.568627, 0.568627, 0.568627, 1 )
+
+[node name="Outline" type="Line2D" parent="Filled In Square/ColorRect"]
+z_index = 1
+points = PoolVector2Array( 64, 0, 0, 0, 0, 64, 64, 64, 64, 0 )
+width = 2.0
+default_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="Filled In Square/ColorRect"]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "#"
+align = 1
+valign = 1
