@@ -8,10 +8,9 @@ extents = Vector2( 64, 64 )
 [node name="Block Piece" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Clickable"]]
-position = Vector2( -64, -64 )
+position = Vector2( -32, -32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
 [node name="Block" type="Sprite" parent="."]

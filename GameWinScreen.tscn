@@ -1,0 +1,107 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Monospace/PeaberryMono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/ARIAL/ARIALBD.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Buttons.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.648438, 1, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.760784, 0.690196, 0.133333, 1 )
+shadow_size = 25
+shadow_offset = Vector2( -10, 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="GameWinScreen" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 656.0
+margin_bottom = 1088.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 589.0
+margin_bottom = 957.0
+custom_constants/margin_right = 40
+custom_constants/margin_top = 220
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+
+[node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+margin_left = 40.0
+margin_top = 220.0
+margin_right = 546.0
+margin_bottom = 914.0
+custom_constants/separation = 64
+
+[node name="Congrats" type="Label" parent="PanelContainer/MarginContainer/Rows"]
+margin_right = 506.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 2 )
+text = "Congratulations!"
+align = 1
+valign = 1
+
+[node name="Final Time" type="Label" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 112.0
+margin_right = 506.0
+margin_bottom = 184.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "00:00:00"
+align = 1
+valign = 1
+
+[node name="Message" type="Label" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 248.0
+margin_right = 506.0
+margin_bottom = 350.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Thank you for playing my prototype! More Levels coming soon..."
+align = 1
+autowrap = true
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 414.0
+margin_right = 506.0
+margin_bottom = 468.0
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer"]
+margin_left = 115.0
+margin_right = 391.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 5 )
+text = "     Quit     "
+script = ExtResource( 5 )
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/CenterContainer/QuitButton" to="PanelContainer/MarginContainer/Rows/CenterContainer/QuitButton" method="_on_QuitButton_pressed"]

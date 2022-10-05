@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Map/Background.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/PeaberryBase.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/Peaberry-Font-v2.0/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Buttons.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Main Menu" type="Node"]
+
+[node name="Message" type="Label" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "
+
+
+
+
+
+
+
+More difficulty types 
+coming soon!"
+align = 1
+autowrap = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 720.0
+margin_bottom = 1280.0
+
+[node name="Rows" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 235.0
+margin_top = 436.0
+margin_right = 484.0
+margin_bottom = 844.0
+custom_constants/separation = 64
+
+[node name="EasyButton" type="Button" parent="CenterContainer/Rows"]
+margin_right = 249.0
+margin_bottom = 54.0
+custom_fonts/font = SubResource( 1 )
+text = "Easy"
+script = ExtResource( 4 )
+
+[node name="MediumButton" type="Button" parent="CenterContainer/Rows"]
+margin_top = 118.0
+margin_right = 249.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 1 )
+text = "  Medium  "
+script = ExtResource( 4 )
+
+[node name="HardButton" type="Button" parent="CenterContainer/Rows"]
+margin_top = 236.0
+margin_right = 249.0
+margin_bottom = 290.0
+custom_fonts/font = SubResource( 1 )
+text = "Hard"
+script = ExtResource( 4 )
+
+[node name="BackButton" type="Button" parent="CenterContainer/Rows"]
+margin_top = 354.0
+margin_right = 249.0
+margin_bottom = 408.0
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+script = ExtResource( 4 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 360, 640 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="CenterContainer/Rows/EasyButton" to="CenterContainer/Rows/EasyButton" method="_on_EasyButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Rows/MediumButton" to="CenterContainer/Rows/MediumButton" method="_on_MediumButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Rows/HardButton" to="CenterContainer/Rows/HardButton" method="_on_HardButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Rows/BackButton" to="CenterContainer/Rows/BackButton" method="_on_BackButton_pressed"]

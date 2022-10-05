@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Filled in Piece.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Blank Square.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://TouchControls.gd" type="Script" id=3]
 [ext_resource path="res://Timer.gd" type="Script" id=4]
 [ext_resource path="res://Map/Background.png" type="Texture" id=5]
+[ext_resource path="res://Tetrominos/LJ Piece.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Tetrominos/Block Piece.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tetrominos/Brick Piece.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Back Button.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Blank Grid.tscn" type="PackedScene" id=11]
 
@@ -37,3 +40,31 @@ margin_bottom = 110.0
 text = "00:00:00"
 align = 1
 valign = 2
+
+[node name="Block Piece" parent="." instance=ExtResource( 7 )]
+position = Vector2( 296, 840 )
+
+[node name="Block Piece2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 624, 1016 )
+
+[node name="Block Piece3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 152, 1176 )
+
+[node name="Brick Piece" parent="." instance=ExtResource( 8 )]
+position = Vector2( 608, 1192 )
+rotation = -1.57079
+
+[node name="Brick Piece2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 608, 832 )
+rotation = -1.57079
+
+[node name="LJ Piece" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 992 )
+rotation = 1.57079
+scale = Vector2( 1, -1 )
+
+[node name="LJ Piece2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 400, 1104 )
+
+[node name="LJ Piece3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 464, 944 )
