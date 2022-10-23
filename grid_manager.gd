@@ -31,7 +31,6 @@ func _ready():
 	organize_grid()
 	
 func _process(_delta):
-	#check_grid()
 	if(grid_is_valid == true):
 		var game_over = GameWinScreen.instance()
 		add_child(game_over)
@@ -108,22 +107,3 @@ func organize_grid():
 			elif(i.pos.y/64 >= 6 and i.pos.y/64 <= 8):
 				g.sub_grids[8].append(i)
 
-func check_grid():
-	for c in g.grid_checker:
-		if(sum_array(g.rows[c]) == 45 and sum_array(g.columns[c]) == 45 and sum_array(g.sub_grids[c]) == 45):
-			g.grid_checker[c] = 1
-			c += 1
-			if(sum_array(g.grid_checker) == 9):
-				grid_is_valid = true
-		else:
-			c = 0
-			g.grid_checker = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-	
-func sum_array(array):
-	var sum = 0
-	for i in array:
-		sum += i
-	return sum
-
-func randomize_grid():
-	pass

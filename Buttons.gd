@@ -11,20 +11,27 @@ func _on_QuitButton_pressed() -> void:
 	get_tree().quit()
 	
 func _on_BackButton_pressed():
-	get_tree().change_scene("res://Main Menu.tscn")
+	if(str(Global.back_button) == "res://DifficultyMenu.tscn"):
+		get_tree().change_scene(str(Global.back_button))
+		Global.back_button = "res://MainMenu.tscn"
+	else:
+		get_tree().change_scene("res://MainMenu.tscn")
 	
 	
 #Difficulty Selectors
 func _on_EasyButton_pressed():
 	Global.difficulty = "Easy"
+	Global.back_button = "res://DifficultyMenu.tscn"
 	get_tree().change_scene("res://LevelSelector.tscn")
 
 func _on_MediumButton_pressed():
 	Global.difficulty = "Medium"
+	Global.back_button = "res://DifficultyMenu.tscn"
 	get_tree().change_scene("res://LevelSelector.tscn")
 
 func _on_HardButton_pressed():
 	Global.difficulty = "Hard"
+	Global.back_button = "res://DifficultyMenu.tscn"
 	get_tree().change_scene("res://LevelSelector.tscn")
 
 

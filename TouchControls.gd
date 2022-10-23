@@ -11,7 +11,7 @@ class Tetro:
 	var value: int
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	var m_pos = get_global_mouse_position() # Basically just shorter to type out
 	
 	if(Input.is_action_just_pressed("touch")):
@@ -37,6 +37,30 @@ func snap_to_nearest_cell(pos):
 	# Raycast a point and return an array of everything hit
 	var result = space_state.intersect_point(pos)
 	
+	if("Block Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+		
+	if("Brick Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+		
+	if("Line Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+		
+	if("LJ Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+		
+	if("Plus Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+		
+	if("Square Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+		
+	if("SZ Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+	
+	if("T Piece" in result[0].collider.get_parent().name):
+		print("It did it")
+	
 	if(len(result) > 1 && result[1].collider.is_in_group("Blank")):
 		print(result)
 		# Result is an array so we have to loop over it when we move shapes on the
@@ -46,6 +70,7 @@ func snap_to_nearest_cell(pos):
 				if(!coll.collider.is_in_group("Filled")):
 					# I am unsure why we have to subtract this large vector, but it works
 					vec = coll.collider.get_parent().position - Vector2(-104, -96)
+					print(vec)
 					
 	else:
 		for s in shape_container:
