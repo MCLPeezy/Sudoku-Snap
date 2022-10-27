@@ -39,8 +39,9 @@ func _process(_delta):
 func read_grid_file(level):
 	var f = File.new()
 	var content = []
+	var filename = "res://Levels/" + str(Global.difficulty) + "/" + str(level) + ".xml"
 	
-	f.open("res://Levels/" + str(Global.difficulty) + "/" + str(level) + ".xml", File.READ)
+	f.open(filename, File.READ)
 	
 	for i in range(81):
 		f.seek(i*3)

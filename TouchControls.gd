@@ -36,19 +36,24 @@ func snap_to_nearest_cell(pos):
 	var result = space_state.intersect_point(pos) # Raycast a point and return an array of everything hit
 	
 	if(len(result) == 2):
-		if(result[1].collider.is_in_group("Blank")):
-			vec = result[1].collider.get_parent().position - Vector2(-104, -96)
-		elif(result[0].collider.is_in_group("Blank")):
+		if(result[0].collider.is_in_group("Blank")):
 			vec = result[0].collider.get_parent().position - Vector2(-104, -96)
+		elif(result[1].collider.is_in_group("Blank")):
+			vec = result[1].collider.get_parent().position - Vector2(-104, -96)
 		else:
 			for s in shape_container:
-				if(s.game_object == result[0].collider):
+				if(s.game_object == result[0].collider or s.game_object == result[1].collider):
+					print(result)
 					return s.origin
+	elif(len(result) == 3):
+		for s in shape_container:
+			if(s.game_object == result[0].collider or s.game_object == result[1].collider or s.game_object == result[2].collider):
+				return s.origin
 	else:
 		for s in shape_container:
 			if(s.game_object == result[0].collider):
 				return s.origin
-				
+
 	return vec
 
 # When the player clicks / touches on a shape it picks it up and allows them to move it while held down
